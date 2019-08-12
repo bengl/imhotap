@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+'use strict';
+
+const { promisify } = require('util');
+const glob = promisify(require('glob'));
+const makeTap = require('make-tap-output');
+const pLimit = require('p-limit');
+require('array-flat-polyfill');
+const exec = require('./lib/exec');
+const { files, concurrency, reporter, quieter } = require('./lib/options');
+const { spawn } = require('child_process');
+
+const processFile = tap => result => {
+  const file = result.file;
+  const trimmed = result.out.trim();
+  let tabbed;
+  if (trimmed.length) {
+    tabbed = trimmed.split('\n').slice(1).map(x => '    ' + x).join('\n');
+  }
+  const ok = result.code === 0;
+  process.exitCode = process.exitCode || (ok ? 0 : 1);
+  const message = quieter || !tabbed ? file : `${file} {\n${tabbed}\n}`;
+  tap.result({ ok, message });
+};
+
+const outputPipe = () => reporter === 'tap' ?
+  process.stdout :
+  spawn(`npx ${reporter}`, {
+    shell: true,
+    stdio: ['pipe', 'inherit', 'inherit']
+  }).on('error', e => {
+    console.error(`Unable to start reporter because:\n${e}`);
+    process.exit(1);
+  }).stdin;
+
+async function multiGlob(files) {
+  const allFiles = await Promise.all(files.map(pattern => glob(pattern)));
+  return Array.from(new Set(allFiles.flat())).sort();
+}
+
+async function quickOrderedMap(promises, fn) {
+ for await (const p of promises) {
+   fn(p);
+ }
+}
+
+(async () => {
+  const tap = makeTap({count: true});
+  const output = outputPipe();
+  tap.pipe(output);
+  const filesToTest = await multiGlob(files);
+  tap.plan(filesToTest.length);
+  const limit = pLimit(concurrency || Infinity);
+  await quickOrderedMap(filesToTest.map(f => limit(() => exec(f))), processFile(tap));
+  output.end();
+})().catch(e => {
+  console.error(e);
+  process.exitCode = 1;
+});

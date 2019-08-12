@@ -1,0 +1,36 @@
+{
+  "name": "imhotap",
+  "version": "1.0.0",
+  "description": "simple test runner",
+  "bin": "imhotap",
+  "scripts": {
+    "test": "node test/test.js | tap-colorize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bengl/imhotap.git"
+  },
+  "keywords": [
+    "test",
+    "runner",
+    "meta",
+    "tap"
+  ],
+  "author": "Bryan English <bryan@bryanenglish.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bengl/imhotap/issues"
+  },
+  "homepage": "https://github.com/bengl/imhotap#readme",
+  "dependencies": {
+    "array-flat-polyfill": "^1.0.1",
+    "glob": "^7.1.4",
+    "make-tap-output": "^2.0.0",
+    "p-limit": "^2.2.0",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "tap-colorize": "^1.2.0",
+    "pitesti": "^3.0.0"
+  }
+}

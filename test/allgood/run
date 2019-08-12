@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+imhotap
+echo =============== result $?
+imhotap -q
+echo =============== result $?
+imhotap --quiet
+echo =============== result $?
+imhotap --concurrency 1
+echo =============== result $?
+imhotap --concurrency 0
+echo =============== result $?
+imhotap --concurrency 10
+echo =============== result $?
+imhotap --files test/test-*.js
+echo =============== result $?
+imhotap -f test/test-1.js
+echo =============== result $?
+imhotap -r tap-colorize
+echo =============== result $?
+imhotap --reporter tap-colorize
+echo =============== result $?

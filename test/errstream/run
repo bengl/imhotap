@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+imhotap
+echo =============== result $?
+imhotap -s stderr
+echo =============== result $?
+imhotap --stream stderr
+echo =============== result $?

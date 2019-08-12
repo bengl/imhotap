@@ -1,0 +1,188 @@
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js
+ok 2 test/test-2.js
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..1
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+=============== result 0
+[00m[2m[38;5;66m
+TAP version 13[00m[00m[2m[38;5;66m
+1..2[00m[00m[1m[38;5;2m
+ok 1 test/test-1.js {[00m
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}[00m[1m[38;5;2m
+ok 2 test/test-2.js {[00m
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well[00m[2m[38;5;66m
+    [00m
+    # success
+}
+
+=============== result 0
+[00m[2m[38;5;66m
+TAP version 13[00m[00m[2m[38;5;66m
+1..2[00m[00m[1m[38;5;2m
+ok 1 test/test-1.js {[00m
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}[00m[1m[38;5;2m
+ok 2 test/test-2.js {[00m
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well[00m[2m[38;5;66m
+    [00m
+    # success
+}
+
+=============== result 0

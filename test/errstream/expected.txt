@@ -1,0 +1,47 @@
+TAP version 13
+1..2
+ok 1 test/test-1.js
+ok 2 test/test-2.js
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
+TAP version 13
+1..2
+ok 1 test/test-1.js {
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+}
+ok 2 test/test-2.js {
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+}
+=============== result 0
