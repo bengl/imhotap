@@ -7,8 +7,8 @@ const makeTap = require('make-tap-output');
 const pLimit = require('p-limit');
 require('array-flat-polyfill');
 const exec = require('./lib/exec');
-const { files, concurrency, reporter, quieter } = require('./lib/options');
-const { spawn } = require('child_process');
+const { files, concurrency, quieter } = require('./lib/options');
+const outputPipe = require('./lib/output');
 
 const processFile = tap => result => {
   const file = result.file;
@@ -30,16 +30,6 @@ const processFile = tap => result => {
     tap.result({ ok, message: file });
   }
 };
-
-const outputPipe = () => reporter === 'tap' ?
-  process.stdout :
-  spawn(`npx ${reporter}`, {
-    shell: true,
-    stdio: ['pipe', 'inherit', 'inherit']
-  }).on('error', e => {
-    console.error(`Unable to start reporter because:\n${e}`);
-    process.exit(1);
-  }).stdin;
 
 async function multiGlob(files) {
   const allFiles = await Promise.all(files.map(pattern => glob(pattern)));

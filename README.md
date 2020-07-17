@@ -47,9 +47,11 @@ example, `-c 1` will tell `imhotap` to run only 1 file at a time.
 
 While the default is to just output TAP, you can format it using any of the
 various reporter tools that convert TAP into more pleasant output using `stdin`
-and `stdout`. For the moment, only reporters that can be run with `npx` are
-supported. Many can be found
+and `stdout`. Many can be found
 [here](https://github.com/sindresorhus/awesome-tap#reporters).
+
+To specify a reporter, use the `-r/--reporter` option. If a named reporter can't
+be found on the $PATH, `imhotap` will attempt to run it using `npx`.
 
 ### Verbosity
 

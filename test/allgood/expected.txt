@@ -186,3 +186,55 @@ ok 1 test/test-1.js[00m[00m[2m[38;5;66m
 ok 2 test/test-2.js[00m
 
 =============== result 0
+ [32m1[0m
+ [31m0[0m
+ [36m0[0m
+
+[4A[5C[38;5;154m-[0m
+[5C[38;5;154m-[0m
+[5C[38;5;154m-[0m
+[5C[38;5;154m-[0m
+[4A[6C_,------,
+[6C_|   /\_/\ 
+[6C^|__( ^ .^) 
+[6C  ""  "" 
+[4A [32m2[0m
+ [31m0[0m
+ [36m0[0m
+
+[4A[5C[38;5;154m-[0m[38;5;154m_[0m
+[5C[38;5;154m-[0m[38;5;154m_[0m
+[5C[38;5;154m-[0m[38;5;154m_[0m
+[5C[38;5;154m-[0m[38;5;154m_[0m
+[4A[7C_,------,
+[7C_|  /\_/\ 
+[7C~|_( ^ .^) 
+[7C ""  "" 
+[4A
+
+
+
+  Failed Tests: There were 0 failures
+
+=============== result 0
+TAP version 13
+1..2
+# Subtest: test/test-1.js
+    1..6
+    ok this
+    ok test
+    ok file
+    ok works
+    ok well
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
+    1..6
+    ok 1 this
+    ok 2 test
+    ok 3 file
+    ok 4 works
+    ok 5 well
+    
+    # success
+ok 2 test/test-2.js
+=============== result 0
