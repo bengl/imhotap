@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PATH=$PWD:$PATH
+
+cd $(dirname "$0")
+
+generate () {
+  ./$1/run > $1/expected.txt
+}
+
+generate allgood
+generate errstream
+generate somebad

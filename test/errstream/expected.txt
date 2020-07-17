@@ -5,15 +5,15 @@ ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -22,19 +22,19 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -43,5 +43,5 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0

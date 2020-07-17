@@ -4,7 +4,7 @@
   "description": "simple test runner",
   "bin": "imhotap",
   "scripts": {
-    "test": "node test/test.js | tap-colorize"
+    "test": "test/test | tap-colorize"
   },
   "repository": {
     "type": "git",

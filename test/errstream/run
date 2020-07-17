@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-imhotap
-echo =============== result $?
-imhotap -s stderr
-echo =============== result $?
-imhotap --stream stderr
-echo =============== result $?
+const { runImhotap } = require('../testutil')
+
+process.chdir(__dirname)
+
+runImhotap()
+runImhotap('-s', 'stderr')
+runImhotap('--stream', 'stderr')

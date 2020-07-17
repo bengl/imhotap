@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-imhotap
-echo =============== result $?
+const { runImhotap } = require('../testutil')
+
+process.chdir(__dirname)
+
+runImhotap()

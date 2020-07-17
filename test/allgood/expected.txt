@@ -1,14 +1,14 @@
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -17,7 +17,7 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
@@ -26,15 +26,15 @@ ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -43,19 +43,19 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -64,19 +64,19 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -85,19 +85,19 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -106,19 +106,19 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..2
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
-ok 2 test/test-2.js {
+ok 1 test/test-1.js
+# Subtest: test/test-2.js
     1..6
     ok 1 this
     ok 2 test
@@ -127,31 +127,31 @@ ok 2 test/test-2.js {
     ok 5 well
     
     # success
-}
+ok 2 test/test-2.js
 =============== result 0
 TAP version 13
 1..1
-ok 1 test/test-1.js {
+# Subtest: test/test-1.js
     1..6
     ok this
     ok test
     ok file
     ok works
     ok well
-}
+ok 1 test/test-1.js
 =============== result 0
 [00m[2m[38;5;66m
 TAP version 13[00m[00m[2m[38;5;66m
-1..2[00m[00m[1m[38;5;2m
-ok 1 test/test-1.js {[00m
+1..2[00m[00m[2m[38;5;66m
+# Subtest: test/test-1.js[00m
     1..6
     ok this
     ok test
     ok file
     ok works
-    ok well
-}[00m[1m[38;5;2m
-ok 2 test/test-2.js {[00m
+    ok well[00m[1m[38;5;2m
+ok 1 test/test-1.js[00m[00m[2m[38;5;66m
+# Subtest: test/test-2.js[00m
     1..6
     ok 1 this
     ok 2 test
@@ -159,22 +159,22 @@ ok 2 test/test-2.js {[00m
     ok 4 works
     ok 5 well[00m[2m[38;5;66m
     [00m
-    # success
-}
+    # success[00m[1m[38;5;2m
+ok 2 test/test-2.js[00m
 
 =============== result 0
 [00m[2m[38;5;66m
 TAP version 13[00m[00m[2m[38;5;66m
-1..2[00m[00m[1m[38;5;2m
-ok 1 test/test-1.js {[00m
+1..2[00m[00m[2m[38;5;66m
+# Subtest: test/test-1.js[00m
     1..6
     ok this
     ok test
     ok file
     ok works
-    ok well
-}[00m[1m[38;5;2m
-ok 2 test/test-2.js {[00m
+    ok well[00m[1m[38;5;2m
+ok 1 test/test-1.js[00m[00m[2m[38;5;66m
+# Subtest: test/test-2.js[00m
     1..6
     ok 1 this
     ok 2 test
@@ -182,7 +182,7 @@ ok 2 test/test-2.js {[00m
     ok 4 works
     ok 5 well[00m[2m[38;5;66m
     [00m
-    # success
-}
+    # success[00m[1m[38;5;2m
+ok 2 test/test-2.js[00m
 
 =============== result 0

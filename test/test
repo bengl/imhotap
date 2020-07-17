@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+PATH=$PWD:$PATH
+
+cd $(dirname "$0")
+
+exitcode=0
+
+echo "TAP version 13"
+echo "1..3"
+count=1
+test () {
+  output=$(./$1/run)
+  ok_num_and_msg="ok $((count++)) $1 match expected.txt"
+  if [[ $(< $1/expected.txt) != "$output" ]]; then
+    echo "not $ok_num_and_msg"
+    exitcode=1
+  else
+    echo $ok_num_and_msg
+  fi
+}
+
+test allgood
+test errstream
+test somebad
+
+exit $exitcode

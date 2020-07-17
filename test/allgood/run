@@ -1,22 +1,16 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-imhotap
-echo =============== result $?
-imhotap -q
-echo =============== result $?
-imhotap --quiet
-echo =============== result $?
-imhotap --concurrency 1
-echo =============== result $?
-imhotap --concurrency 0
-echo =============== result $?
-imhotap --concurrency 10
-echo =============== result $?
-imhotap --files test/test-*.js
-echo =============== result $?
-imhotap -f test/test-1.js
-echo =============== result $?
-imhotap -r tap-colorize
-echo =============== result $?
-imhotap --reporter tap-colorize
-echo =============== result $?
+const { runImhotap } = require('../testutil')
+
+process.chdir(__dirname)
+
+runImhotap()
+runImhotap('-q')
+runImhotap('--quiet')
+runImhotap('--concurrency', '1')
+runImhotap('--concurrency', '0')
+runImhotap('--concurrency', '10')
+runImhotap('--files', 'test/test-*.js')
+runImhotap('-f', 'test/test-1.js')
+runImhotap('-r', 'tap-colorize')
+runImhotap('--reporter', 'tap-colorize')
