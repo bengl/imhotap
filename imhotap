@@ -15,12 +15,20 @@ const processFile = tap => result => {
   const trimmed = result.out.trim();
   let tabbed;
   if (trimmed.length) {
-    tabbed = trimmed.split('\n').slice(1).map(x => '    ' + x).join('\n');
+    tabbed = trimmed.split('\n')
+      .filter(line => !line.startsWith('TAP version '))
+      .map(x => '    ' + x)
+      .join('\n');
   }
   const ok = result.code === 0;
   process.exitCode = process.exitCode || (ok ? 0 : 1);
-  const message = quieter || !tabbed ? file : `${file} {\n${tabbed}\n}`;
-  tap.result({ ok, message });
+  if (quieter || !tabbed) {
+    tap.result({ ok, message: file });
+  } else {
+    tap.writeln(`# Subtest: ${file}`);
+    tap.writeln(tabbed)
+    tap.result({ ok, message: file });
+  }
 };
 
 const outputPipe = () => reporter === 'tap' ?
