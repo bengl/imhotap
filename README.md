@@ -8,6 +8,17 @@ will run each file individually. Each file that exits with a non-zero code will
 be considered a test failure. The output is presented in TAP, but you can also
 use whatever reporter you'd like.
 
+No assumptions are made about what underlying test framework is used in each of
+the files, but if your tests don't produce TAP output, it's recommended that you
+use the `-q/--quieter` option to suppress output from individual test files.
+
+Some test frameworks that should work well with `imhotap` are:
+
+* [`pitesti`](https://npm.im/pitesti)
+* [`tape`](https://npm.im/tape)
+* [`node-tap`](https://npm.im/tap)
+* [Any other TAP producer](https://testanything.org/producers.html)
+
 ## Usage
 
 ```
@@ -36,6 +47,9 @@ glob (i.e. minimatch/fnmatch) pattern. For example, to match any files in your
 `test` directory, and subdirectories, ending in `.spec.js`, you might use the
 option `-f test/**/*.spec.js`.
 
+If matching files end in `.js`, they will be executed with `node`, otherwise the
+matching files must be executable.
+
 ### Concurrency
 
 It's expected that your test files can be run as separate process at the same
@@ -57,7 +71,32 @@ be found on the $PATH, `imhotap` will attempt to run it using `npx`.
 
 By default, `imhotap` will assume that output from files is TAP-encoded and so
 can be included as a subtest in TAP output. If this is not the case, or you'd
-like more terse output, you can use the `-q/--quiet` option.
+like more terse output, you can use the `-q/--quieter` option.
+
+### Config in `package.json`
+
+You can also provide config in `package.json` using the `"imhotap"` property.
+For example, to set the file pattern, to `test-*.js`, your package.json can look
+like this:
+
+```js
+{
+  "name": "myapp",
+  "scripts": {
+    "test": "imhotap"
+  },
+  // ...
+  "dependencies": {
+    // ...
+  },
+  "devDependencies": {
+    "imhotap": "*"
+  },
+  "imhotap": {
+    "files": "test-*.js"
+  }
+}
+```
 
 ## License
 
