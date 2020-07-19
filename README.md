@@ -29,7 +29,7 @@ Options:
   -f, --files        glob pattern for while files to run
                                            [array] [default: "test/**/test*.js"]
   -c, --concurrency  how many test files to run in parallel (0 == Infinity)
-                                                           [number] [default: 0]
+                                                          [number] [default: 11]
   -r, --reporter     which tap reporter to use, or just `tap`
                                                        [string] [default: "tap"]
   -q, --quieter      whether or not to include subtests on success
@@ -55,7 +55,8 @@ matching files must be executable.
 It's expected that your test files can be run as separate process at the same
 time. If that's not the case, or there's too much load on your computer, you can
 adjust the the the number of simultaneous processes `imhotap` will spawn. For
-example, `-c 1` will tell `imhotap` to run only 1 file at a time.
+example, `-c 1` will tell `imhotap` to run only 1 file at a time. The default
+is 1 less than the available CPU cores on your computer.
 
 ### Reporting
 
