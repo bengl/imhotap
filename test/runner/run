@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const { runImhotap } = require('../testutil')
+
+process.chdir(__dirname)
+
+runImhotap('-R', './test-runner')
+runImhotap('--runner', './test-runner')
+

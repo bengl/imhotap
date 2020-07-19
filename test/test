@@ -23,5 +23,6 @@ test () {
 test allgood
 test errstream
 test somebad
+test runner
 
 exit $exitcode

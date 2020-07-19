@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+global.test = require('pitesti')();
+
+require('./' + process.argv[2]);
+
+test();

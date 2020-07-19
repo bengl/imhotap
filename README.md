@@ -47,8 +47,8 @@ glob (i.e. minimatch/fnmatch) pattern. For example, to match any files in your
 `test` directory, and subdirectories, ending in `.spec.js`, you might use the
 option `-f test/**/*.spec.js`.
 
-If matching files end in `.js`, they will be executed with `node`, otherwise the
-matching files must be executable.
+If matching files end in `.js`, they will be executed with `node`, otherwise (if
+`-R/--runner` is not set) the matching files must be executable.
 
 ### Concurrency
 
@@ -67,6 +67,16 @@ and `stdout`. Many can be found
 
 To specify a reporter, use the `-r/--reporter` option. If a named reporter can't
 be found on the $PATH, `imhotap` will attempt to run it using `npx`.
+
+### Runner
+
+You may want to use a different runner than `node` for executing your files. If
+`-R/--runner` is set to some script runner name, that runner will be used to
+execute your test files.
+
+For example, if your test files are written in TypeScript, you may want to use
+`tsnode` to execute your files. In that case, you can pass `-R tsnode` to
+`imhotap`.
 
 ### Verbosity
 

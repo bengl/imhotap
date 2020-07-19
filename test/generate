@@ -11,3 +11,4 @@ generate () {
 generate allgood
 generate errstream
 generate somebad
+generate runner
