@@ -34,6 +34,8 @@ Options:
                                                        [string] [default: "tap"]
   -q, --quieter      whether or not to include subtests on success
                                                       [boolean] [default: false]
+  -R, --runner       a script runner for running test files (e.g. tsnode, etc.)
+                                                                        [string]
   -s, --stream       stream to expect TAP output from test files
                                [choices: "stdout", "stderr"] [default: "stdout"]
 ```
