@@ -9,8 +9,10 @@ be considered a test failure. The output is presented in TAP, but you can also
 use whatever reporter you'd like.
 
 No assumptions are made about what underlying test framework is used in each of
-the files, but if your tests don't produce TAP output, it's recommended that you
-use the `-q/--quieter` option to suppress output from individual test files.
+the files. If your tests produce TAP in either stdout or stderr, the output of
+the first of those two streams that looks like TAP data will be treated as a
+subtest. If neither stream looks like TAP data, both streams will be displayed
+inside a YAML block.
 
 Some test frameworks that should work well with `imhotap` are:
 
@@ -32,12 +34,10 @@ Options:
                                                           [number] [default: 11]
   -r, --reporter     which tap reporter to use, or just `tap`
                                                        [string] [default: "tap"]
-  -q, --quieter      whether or not to include subtests on success
+  -q, --quieter      supresses all but top-level tap data
                                                       [boolean] [default: false]
   -R, --runner       a script runner for running test files (e.g. tsnode, etc.)
                                                                         [string]
-  -s, --stream       stream to expect TAP output from test files
-                               [choices: "stdout", "stderr"] [default: "stdout"]
 ```
 
 Without any additional options, `imhotap` will run with all the defaults.
@@ -82,9 +82,10 @@ For example, if your test files are written in TypeScript, you may want to use
 
 ### Verbosity
 
-By default, `imhotap` will assume that output from files is TAP-encoded and so
-can be included as a subtest in TAP output. If this is not the case, or you'd
-like more terse output, you can use the `-q/--quieter` option.
+By default, `imhotap` will show subtest data from either stdout or stderr as
+described above, or just output the streams in a YAML block if no TAP output is
+found. In either case, if you'd like more terse output, you can use the
+`-q/--quieter` option to hide all but the top-level TAP produced by `imhotap`.
 
 ### Config in `package.json`
 

@@ -12,22 +12,37 @@ const outputPipe = require('./lib/output');
 
 const processFile = tap => result => {
   const file = result.file;
-  const trimmed = result.out.trim();
-  let tabbed;
-  if (trimmed.length) {
-    tabbed = trimmed.split('\n')
-      .filter(line => !line.startsWith('TAP version '))
-      .map(x => '    ' + x)
-      .join('\n');
-  }
+  const trimmedOut = result.out.trim();
+  const trimmedErr = result.err.trim();
   const ok = result.code === 0;
   process.exitCode = process.exitCode || (ok ? 0 : 1);
-  if (quieter || !tabbed) {
+  if (quieter || (!trimmedOut.length && !trimmedErr.length)) {
     tap.result({ ok, message: file });
-  } else {
+  } else if (trimmedOut.startsWith('TAP version ')) {
     tap.writeln(`# Subtest: ${file}`);
+    const tabbed = trimmedOut.split('\n')
+      .filter(x => !x.startsWith('TAP version '))
+      .map(x => '    ' + x)
+      .join('\n');
     tap.writeln(tabbed)
     tap.result({ ok, message: file });
+  } else if (trimmedErr.startsWith('TAP version ')) {
+    tap.writeln(`# Subtest: ${file}`);
+    const tabbed = trimmedErr.split('\n')
+      .filter(x => !x.startsWith('TAP version '))
+      .map(x => '    ' + x)
+      .join('\n');
+    tap.writeln(tabbed)
+    tap.result({ ok, message: file });
+  } else {
+    tap.result({
+      ok,
+      message: file,
+      dataObj: {
+        stdout: trimmedOut,
+        stderr: trimmedErr
+      }
+    });
   }
 };
 
@@ -37,9 +52,9 @@ async function multiGlob(files) {
 }
 
 async function quickOrderedMap(promises, fn) {
- for await (const p of promises) {
-   fn(p);
- }
+  for await (const p of promises) {
+    fn(p);
+  }
 }
 
 (async () => {
