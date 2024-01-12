@@ -31,13 +31,17 @@ Options:
   -f, --files        glob pattern for while files to run
                                            [array] [default: "test/**/test*.js"]
   -c, --concurrency  how many test files to run in parallel (0 == Infinity)
-                                                          [number] [default: 11]
+                                                          [number] [default: 23]
   -r, --reporter     which tap reporter to use, or just `tap`
                                                        [string] [default: "tap"]
-  -q, --quieter      supresses all but top-level tap data
+  -q, --quieter      whether or not to include subtests on success
                                                       [boolean] [default: false]
   -R, --runner       a script runner for running test files (e.g. tsnode, etc.)
                                                                         [string]
+  -e, --test-env     set an environment variable to the test file and runner
+                                                                         [array]
+  -s, --stream       stream to expect TAP output from test files
+                               [choices: "stdout", "stderr"] [default: "stdout"]
 ```
 
 Without any additional options, `imhotap` will run with all the defaults.
@@ -79,6 +83,15 @@ execute your test files.
 For example, if your test files are written in TypeScript, you may want to use
 `tsnode` to execute your files. In that case, you can pass `-R tsnode` to
 `imhotap`.
+
+### Setting environment variables for test files
+
+It can be useful to set environment variables that apply to test files, but
+*not* to `imhotap` itself. You can use the `-e/--test-env` option to set one or
+more environment variables.
+
+For example, to set `FOO=bar` and `BAZ=bux` in the test environment, you can
+pass `-e FOO=bar BAZ=bux` to `imhotap`.
 
 ### Verbosity
 

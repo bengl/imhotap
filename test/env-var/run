@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const { runImhotap } = require('../testutil')
+
+process.chdir(__dirname)
+
+runImhotap('--test-env', 'FOO=42')
+runImhotap('--test-env', 'BAR=47', 'FOO=42')
+runImhotap('--test-env', 'NODE_OPTIONS=--require ./hello.js --zero-fill-buffers', 'FOO=42')

@@ -1,0 +1,17 @@
+TAP version 13
+1..1
+ok 1 test/test-1.js
+=============== result 0
+TAP version 13
+1..1
+ok 1 test/test-1.js
+=============== result 0
+TAP version 13
+1..1
+ok 1 test/test-1.js
+  ---
+  stdout: hello world
+  stderr: ''
+
+  ...
+=============== result 0

@@ -13,3 +13,4 @@ generate errstream
 generate somebad
 generate runner
 generate nontap
+generate env-var
